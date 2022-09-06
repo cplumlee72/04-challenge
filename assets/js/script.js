@@ -1,4 +1,4 @@
-var quizContainer = document.querySelectorAll('.quizcontainer');
+var quizContainer = document.querySelector('.quizcontainer');
 var startbutton = document.querySelector('.startbutton')
 var timer = document.querySelectorAll('.timerbox');
 var timertxt = document.querySelectorAll('.timeleft')
@@ -55,7 +55,6 @@ var questions = [
 
 
         var que_text = document.querySelector("#question")
-        // code here
         var ques = "<span>" +  questions[queCount].q + '</span>';
         var opt1 = '<button class="option">'+ questions[queCount].ans[0] +'</button>'
         var opt2 = '<button class="option">'+ questions[queCount].ans[1] +'</button>'
@@ -68,17 +67,24 @@ var questions = [
         op4.innerHTML = opt4;
 
 
-        for (let queCount = 0; queCount < questions.length; queCount++) {
+        
                                 
-        document.querySelector(".quizcontainer").addEventListener("click", function checkAnswer(event) {
+        quizContainer.addEventListener("click", function checkAnswer(event) {
             var userchoice = event.target.innerHTML;            
             if (userchoice == questions[queCount].correct) {                
-                console.log(userchoice, "good job!")                
-            }             
-            console.log(queCount)            
-        })
+                console.log(userchoice, "good job!")  
+                                            
+            } 
+            else {
+                console.log("WRONG")
+            }            
+           
+            queCount++
+            console.log(ques)
+        }) 
+        
 
-        }
+        
         
 
 
