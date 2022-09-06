@@ -1,4 +1,5 @@
 var quizContainer = document.querySelectorAll('.quizcontainer');
+var startbutton = document.querySelector('.startbutton')
 var timer = document.querySelectorAll('.timerbox');
 var timertxt = document.querySelectorAll('.timeleft')
 var answer_list = document.querySelector(".answer_list");
@@ -48,26 +49,45 @@ var questions = [
 
 
 
-    function showQuestions(index) {
-        let que_text = document.querySelector("#question")
+    function showQuestions(queCount) {
+        startbutton.remove()
+        
+
+
+        var que_text = document.querySelector("#question")
         // code here
-        let ques = "<span>" +  questions[index].q + '</span>';
-        let opt1 = '<button class="option">'+ questions[index].ans[0] +'</button>'
-        let opt2 = '<button class="option">'+ questions[index].ans[1] +'</button>'
-        let opt3 = '<button class="option">'+ questions[index].ans[2] +'</button>'
-        let opt4 = '<button class="option">'+ questions[index].ans[3] +'</button>';
+        var ques = "<span>" +  questions[queCount].q + '</span>';
+        var opt1 = '<button class="option">'+ questions[queCount].ans[0] +'</button>'
+        var opt2 = '<button class="option">'+ questions[queCount].ans[1] +'</button>'
+        var opt3 = '<button class="option">'+ questions[queCount].ans[2] +'</button>'
+        var opt4 = '<button class="option">'+ questions[queCount].ans[3] +'</button>';
         que_text.innerHTML = ques; //adding new span tag inside que_tag
         op1.innerHTML = opt1;
         op2.innerHTML = opt2;
         op3.innerHTML = opt3;
         op4.innerHTML = opt4;
 
+
+        for (let queCount = 0; queCount < questions.length; queCount++) {
+                                
+        document.querySelector(".quizcontainer").addEventListener("click", function checkAnswer(event) {
+            var userchoice = event.target.innerHTML;            
+            if (userchoice == questions[queCount].correct) {                
+                console.log(userchoice, "good job!")                
+            }             
+            console.log(queCount)            
+        })
+
+        }
+        
+
+
+        
     }   
 
-    function showResults(questions, quizcontent, resultsContainer) {
-        // code here
-    }
+    
 
 
 
 showQuestions(queCount);
+
