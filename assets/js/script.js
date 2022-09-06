@@ -1,9 +1,17 @@
 var quizContainer = document.querySelectorAll('.quizcontainer');
 var timer = document.querySelectorAll('.timerbox');
+var timertxt = document.querySelectorAll('.timeleft')
+var answer_list = document.querySelector(".answer_list");
+var op1 = document.querySelector("#op1")
+var op2 = document.querySelector("#op2")
+var op3 = document.querySelector("#op3")
+var op4 = document.querySelector("#op4")
+var queCount = 0
 
 // Setting each questions with it's options and correct option
 var questions = [
     {
+        number: 1,
         q: "This is question 1",
         ans: [
             'a',
@@ -14,6 +22,7 @@ var questions = [
         correct: 'b',
     },
     {
+        number: 2,
         q: "This is question 2",
         ans: [
             'a',
@@ -23,7 +32,9 @@ var questions = [
         ],
         correct: 'c',
     },
-    {   q: "This is question 3",
+    {
+        number: 3,
+        q: "This is question 3",
         ans: [
             'a',
             'b',
@@ -34,23 +45,23 @@ var questions = [
     },
 ];
 
-console.log(myQuestions[0].answers);
 
 
 
-function startQuiz(questions, quizcontent) {
-
-
-    function showQuestions(questions, quizContainer, resultsContainer) {
+    function showQuestions(index) {
+        let que_text = document.querySelector("#question")
         // code here
-        var output = [];
-        var answers;
+        let ques = "<span>" +  questions[index].q + '</span>';
+        let opt1 = '<button class="option">'+ questions[index].ans[0] +'</button>'
+        let opt2 = '<button class="option">'+ questions[index].ans[1] +'</button>'
+        let opt3 = '<button class="option">'+ questions[index].ans[2] +'</button>'
+        let opt4 = '<button class="option">'+ questions[index].ans[3] +'</button>';
+        que_text.innerHTML = ques; //adding new span tag inside que_tag
+        op1.innerHTML = opt1;
+        op2.innerHTML = opt2;
+        op3.innerHTML = opt3;
+        op4.innerHTML = opt4;
 
-        for ( var i=0; i<questions.length; i++) {
-            answers.push(
-                
-            )
-        }
     }   
 
     function showResults(questions, quizcontent, resultsContainer) {
@@ -59,5 +70,4 @@ function startQuiz(questions, quizcontent) {
 
 
 
-    }
-
+showQuestions(queCount);
