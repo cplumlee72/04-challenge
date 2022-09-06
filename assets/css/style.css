@@ -11,4 +11,22 @@ header {
 main {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quizcontainer {
+    display: flex;
+    flex-flow: wrap column;
+}
+
+button {
+    word-wrap: break-word;
+    width: 100%;
+    line-height: 1.5;
+    margin: 10px 0px;
+}
+
+button:hover {
+    background-color: lightblue;
 }
