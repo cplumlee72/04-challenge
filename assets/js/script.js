@@ -1,5 +1,6 @@
 var quizContainer = document.querySelector('.quizcontainer');
 var startbutton = document.querySelector('.startbutton')
+var header = document.querySelector('header');
 var timer = document.querySelector('.timerbox');
 var timertxt = document.querySelector('.timeleft')
 var hiScores = document.querySelector(".hiscores");
@@ -9,9 +10,9 @@ var op2 = document.querySelector("#op2")
 var op3 = document.querySelector("#op3")
 var op4 = document.querySelector("#op4")
 
-var header = document.querySelector('header');
-console.log(header)
-timerCount = 50
+
+
+secondsLeft = 50
 gameState = false
 queCount = 0
 quesRight = 0
@@ -55,11 +56,17 @@ var questions = [
 
 
 function showScores() {
+    function refreshPage() {
+        window.location.reload()
+    }
     header.remove();
     document.querySelector('main').remove();
     var hsBox = document.createElement("div");
     var hsHeader = document.createElement("header");
     var hsSpan = document.createElement("h1");
+    var backButton = document.createElement("button");
+    backButton.textContent = "go back";
+    backButton.setAttribute("id", "backbutton")
     hsBox.setAttribute("id", "hsBox");
     hsHeader.innerHTML = "Current High Score";
     hsHeader.setAttribute('id', 'hsHeader');    
@@ -68,8 +75,9 @@ function showScores() {
     document.querySelector('body').appendChild(hsHeader);
     document.querySelector('body').appendChild(hsBox);
     hsBox.appendChild(hsSpan);
-
-
+    hsBox.appendChild(backButton);
+    backButton.addEventListener("click", refreshPage)
+    
    }
 
 
@@ -96,7 +104,7 @@ function endGame() {
     submitButton.addEventListener("click", function(event) {
         event.preventDefault();
         var newEntry = inputBox.value;
-        var studentScore = timerCount;
+        var studentScore = secondsLeft;
         if (newEntry === "") {
             alert("Can't submit an empty form!");
         } else {
@@ -112,6 +120,14 @@ function endGame() {
 
 
 function showQuestions() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timertxt.textContent = secondsLeft;    
+        if(secondsLeft === 0 || gameState === false) {
+          clearInterval(timerInterval);
+        }    
+      }, 1000);
+
     gameState = true
     var ques =  questions[queCount].q;
     var opt1 = '<button class="option">'+ questions[queCount].ans[0] +'</button>';
@@ -139,7 +155,9 @@ function checkAnswer(event) {
             console.log(userchoice, "good job!"); 
             console.log(queCount, questions.length);
             showQuestions();                                   
-        } else {                        
+        } else { 
+            secondsLeft = secondsLeft - 5; 
+                                 
             console.log("WRONG");
           }
     } else {

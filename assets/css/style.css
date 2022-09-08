@@ -57,6 +57,10 @@ button {
     margin: 10px 0px;
 }
 
+#backbutton {
+    width: 10%;
+}
+
 button:hover {
     background-color: lightblue;
 }
