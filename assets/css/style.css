@@ -11,6 +11,12 @@ body {
     background-color: #39424b;
 }
 
+#quizfooter {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 40px;
+}
+
 .normheader {
     width: 99vw;
     background-color: #546A76;
@@ -49,7 +55,7 @@ body {
 
 input {
     background-color: #75a9ce;
-    border-style: groove;
+    border-style: ridge;
     border-radius: 8px;
     text-align: center;
 }

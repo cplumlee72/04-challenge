@@ -90,7 +90,7 @@ function endGame() {
     document.querySelector("main").appendChild(newContainer);
 
     var hsMessage = document.createElement("p");
-    hsMessage.innerHTML = "Your final score is" + ' ' + secondsLeft;
+    hsMessage.innerHTML = "Your final score is" + ' ' + secondsLeft + '/50';
     var inputBox = document.createElement("input");
     inputBox.setAttribute("type", "text");
     inputBox.setAttribute("placeholder", "Enter your intitals here");
@@ -117,8 +117,8 @@ function endGame() {
         })
     return;
     }
-
-
+    var footer = document.createElement("div")
+    footer.setAttribute("id", "quizfooter")
 
 function showQuestions() {
     var timerInterval = setInterval(function() {
