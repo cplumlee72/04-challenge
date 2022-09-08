@@ -21,36 +21,36 @@ quesRight = 0
 var questions = [
     {
         number: 1,
-        q: "This is question 1",
+        q: "What Does CSS Stand for?",
         ans: [
-            'a',
-            'b',
-            'c',
-            'd'
+            'Computer Styling Sheet',
+            'Cascading Style Sheet',
+            'Comprised of Style Sheets',
+            'Compiling Style Sheets'
         ],
-        correct: 'b',
+        correct: 'Cascading Style Sheet',
     },
     {
         number: 2,
-        q: "This is question 2",
+        q: "Which method calls a function for each element in an array?",
         ans: [
-            'a',
-            'b',
-            'c',
-            'd'
+            'while()',
+            'loop()',
+            'forEach()',
+            'None of the Above'
         ],
-        correct: 'c',
+        correct: 'forEach()',
     },
     {
         number: 3,
-        q: "This is question 3",
+        q: "Which of the following functions of Array object returns a new array comprised of this array joined with other arrays(s) and/or values?",
         ans: [
-            'a',
-            'b',
-            'c',
-            'd'
+            'concat()',
+            'pop()',
+            'push()',
+            'some()'
         ],
-        correct: 'a',
+        correct: 'concat()',
     },
 ];
 
@@ -90,9 +90,10 @@ function endGame() {
     document.querySelector("main").appendChild(newContainer);
 
     var hsMessage = document.createElement("p");
-    hsMessage.innerHTML = "Your final score is" + ' ' + quesRight;
+    hsMessage.innerHTML = "Your final score is" + ' ' + secondsLeft;
     var inputBox = document.createElement("input");
     inputBox.setAttribute("type", "text");
+    inputBox.setAttribute("placeholder", "Enter your intitals here");
     var submitButton = document.createElement("button")
     submitButton.textContent = ('submit')
     
@@ -148,7 +149,7 @@ function checkAnswer(event) {
     var lastQues =  questions[2].q;        
     var ques =  questions[queCount].q;        
     var userchoice = event.target.innerHTML; 
-    if ( lastQues !== ques) {
+    if ( lastQues !== ques && secondsLeft > 0) {
         if (userchoice == questions[queCount].correct) {
             quesRight++; 
             queCount++;                                     

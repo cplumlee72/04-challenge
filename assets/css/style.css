@@ -1,53 +1,107 @@
-.normheader {
-    width: 99vw;
-    background-color: brown;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    line-height: 10vh;
-    font-size: 20px;
+* {
+    font-family: 'calibri';
+    font-weight: 600;
+    
 }
-
-.hiscores:hover {
-    color: blue;
-    background-color: rgba(138, 57, 57, 0.541);
-}
-
-#hsHeader {
-    width: 100vw;
-    text-align: center;
-    line-height: 10vh;
-    font-size: 30px;
-    background-color: brown;
-}
-
-#hsBox {
-    height: 40vh;
-    width: 50vw;
-    background-color: blueviolet;
-    text-align: center;
-}
-
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    background-color: grey;
+    background-color: #39424b;
 }
+
+.normheader {
+    width: 99vw;
+    background-color: #546A76;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    line-height: 5vh;
+    font-size: 20px;
+    border-style: ridge;
+    border-color: #75a9ce;
+}
+
+.timerbox {
+    font-weight: 600;
+    padding: 0px 5px;
+    background-color: #477191;
+    color: rgb(17, 33, 100);
+    border-radius: 10px;
+    border-style: ridge;
+    border-color: #75a9ce;
+}
+.hiscores {
+    padding: 0px 5px;
+    text-align: center;
+    background-color: #477191;
+    border-radius: 10px;
+    border-style: ridge;
+    border-color: #75a9ce;
+}
+
+.hiscores:hover {
+    
+    background-color: #75a9ce;
+}
+
+input {
+    background-color: #75a9ce;
+    border-style: groove;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#hsHeader {
+    width: 99vw;
+    background-color: #546A76;    
+    text-align: center;
+    padding: 10px;
+    line-height: 10vh;
+    font-size: 40px;
+    border-style: ridge;
+    border-color: #75a9ce;
+}
+
+#hsBox {
+    height: 40vh;
+    width: 50vw;
+    background-color: rgb(122, 143, 168);
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    border-style: ridge;
+    border-color: #75a9ce;
+}
+
+
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: rgb(122, 143, 168);
+    width: 50vw;
+    padding: 200px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border-style: ridge;
+    border-color: #75a9ce;
 }
 
 .div {
     display: flex;
     flex-flow: wrap column;
     align-content: center;
+    justify-content: center;
+    
+}
+
+.startbutton {
+    font-size: 20px;
 }
 
 button {
@@ -55,6 +109,13 @@ button {
     width: 100%;
     line-height: 1.5;
     margin: 10px 0px;
+    background-color: rgb(106, 152, 204);
+    border-radius: 10px;
+}
+
+.choice button {
+    font-size: 30px;
+
 }
 
 #backbutton {
