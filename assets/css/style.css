@@ -1,4 +1,5 @@
-header {
+.normheader {
+    width: 99vw;
     background-color: brown;
     display: flex;
     flex-direction: row;
@@ -8,6 +9,34 @@ header {
     font-size: 20px;
 }
 
+.hiscores:hover {
+    color: blue;
+    background-color: rgba(138, 57, 57, 0.541);
+}
+
+#hsHeader {
+    width: 100vw;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 30px;
+    background-color: brown;
+}
+
+#hsBox {
+    height: 40vh;
+    width: 50vw;
+    background-color: blueviolet;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: grey;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -15,9 +44,10 @@ main {
     align-items: center;
 }
 
-.quizcontainer {
+.div {
     display: flex;
     flex-flow: wrap column;
+    align-content: center;
 }
 
 button {
