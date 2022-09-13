@@ -11,7 +11,7 @@ It then outputs the password to a text field so that it can be copied by the use
 
 ## Usage 
 
-- Open a broswer. Navigate to [https://cplumlee72.github.io/04-Challenge/](https://cplumlee72.github.io/04-Challenge/)
+- Open a broswer. Navigate to [https://cplumlee72.github.io/Coding-Quiz/](https://cplumlee72.github.io/Coding-Quiz/)
 
 - Click on the start quiz button to begin the quiz. 
 
