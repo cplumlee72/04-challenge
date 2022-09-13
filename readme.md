@@ -1,4 +1,4 @@
-# 03 JavaScript: Password Generator
+# 03 JavaScript: Coding Quiz
 
 ## Description
 This is a simple quiz to test your knowledge of some fundamental web-development concepts! Just click start to go through and see how you do!  
