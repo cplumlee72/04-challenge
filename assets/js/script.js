@@ -52,6 +52,28 @@ var questions = [
         ],
         correct: 'concat()',
     },
+    {
+        number: 4,
+        q: "What is an example of a self-closing tag?",
+        ans: [
+            'link',
+            'p',
+            'div',
+            'span'
+        ],
+        correct: 'link',
+    },
+    {
+        number: 5,
+        q: "What selector applies styling to all elements in a CSS document?",
+        ans: [
+            '&&',
+            '*',
+            '.',
+            '#'
+        ],
+        correct: '*',
+    },
 ];
 
 
@@ -121,22 +143,24 @@ function endGame() {
     footer.setAttribute("id", "quizfooter")
 
 function showQuestions() {
+    if (gameState !== true){
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timertxt.textContent = secondsLeft;    
-        if(secondsLeft === 0 || gameState === false) {
+        if(secondsLeft <= 0 || gameState === false) {
           clearInterval(timerInterval);
+          endGame();
         }    
-      }, 1000);
+      }, 1000);}
 
     gameState = true
-    var ques =  questions[queCount].q;
+    var currentQues =  questions[queCount].q;
     var opt1 = '<button class="option">'+ questions[queCount].ans[0] +'</button>';
     var opt2 = '<button class="option">'+ questions[queCount].ans[1] +'</button>';
     var opt3 = '<button class="option">'+ questions[queCount].ans[2] +'</button>';
     var opt4 = '<button class="option">'+ questions[queCount].ans[3] +'</button>';
     startbutton.remove();
-    que_text.innerHTML = ques; //adding new span tag inside que_tag
+    que_text.innerHTML = currentQues; //adding new span tag inside que_tag
     op1.innerHTML = opt1;
     op2.innerHTML = opt2;
     op3.innerHTML = opt3;
@@ -146,10 +170,10 @@ function showQuestions() {
     }
 
 function checkAnswer(event) {
-    var lastQues =  questions[2].q;        
-    var ques =  questions[queCount].q;        
+    var lastQues =  questions[4].q;        
+    var currentQues =  questions[queCount].q;        
     var userchoice = event.target.innerHTML; 
-    if ( lastQues !== ques && secondsLeft > 0) {
+    if ( lastQues !== currentQues && secondsLeft > 0) {
         if (userchoice == questions[queCount].correct) {
             quesRight++; 
             queCount++;                                     
@@ -162,8 +186,7 @@ function checkAnswer(event) {
             console.log("WRONG");
           }
     } else {
-        gameState = false
-        endGame();
+        gameState = false        
         console.log("OVER")
         return;
        } return;
