@@ -1,11 +1,7 @@
 # 03 JavaScript: Password Generator
 
 ## Description
-This is a rudimentary password generator that, after clicking the generate button, goes through several 
-prompts to ask how long the user wants their password to be, and if the user wants specific sets of 
-characters included in their password. It stores those selections and then runs a function on the data 
-stored to pick a set number of randomized characters based on the length of password set by the user. 
-It then outputs the password to a text field so that it can be copied by the user. 
+This is a simple quiz to test your knowledge of some fundamental web-development concepts! Just click start to go through and see how you do!  
 
 
 
